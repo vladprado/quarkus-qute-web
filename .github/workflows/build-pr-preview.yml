@@ -41,7 +41,7 @@ jobs:
         with:
           setup-java: 'false'
           github-pages: 'false'
-          site-directory: 'qute'
+          site-directory: 'examples/markdown-example'
           site-future: 'true'
           maven-executable: 'mvn'
 
@@ -49,6 +49,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: qute
-          path: ./docs/modules/ROOT
+          path: ./examples/markdown-example/target/classes/templates/pub/
           retention-days: 3
 

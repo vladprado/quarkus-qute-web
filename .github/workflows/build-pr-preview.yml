@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Set up JDK 17ß
+      - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -35,20 +35,3 @@ jobs:
           name: docs
           path: ./docs/target/generated-docs
           retention-days: 3
-      
-      - name: Build Qute-Web
-        uses: ./
-        with:
-          setup-java: 'false'
-          github-pages: 'false'
-          site-directory: 'examples/markdown-example'
-          site-future: 'true'
-          maven-executable: 'mvn'
-
-      - name: Publishing templates
-        uses: actions/upload-artifact@v4
-        with:
-          name: qute
-          path: ./examples/markdown-example/target/classes/templates/pub/
-          retention-days: 3
-
